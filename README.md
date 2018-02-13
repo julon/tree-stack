@@ -14,7 +14,9 @@ cd server && \
   npm run start # Start the server
 
 # Start the client development server
-cd client && npm run dev
+cd client && \
+  npm install && \
+  npm run dev
 
 # Then go to http://localhost:8080 with your browser
 ```
