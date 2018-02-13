@@ -1,6 +1,6 @@
 "use strict";
 
-var mongoose = require("mongoose"),
+const mongoose = require("mongoose"),
   Tree = mongoose.model("Trees");
 
 function listTreesByPage(req, res) {

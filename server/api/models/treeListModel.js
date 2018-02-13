@@ -1,17 +1,13 @@
 "use strict";
 
-var mongoose = require("mongoose"),
+const mongoose = require("mongoose"),
   mongoosePaginate = require("mongoose-paginate"),
   Schema = mongoose.Schema;
 
-var TreeSchema = new Schema({
+const TreeSchema = new Schema({
   name: {
     type: String,
     required: "The tree name is missing"
-  },
-  created_date: {
-    type: Date,
-    default: Date.now()
   }
 });
 
