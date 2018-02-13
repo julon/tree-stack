@@ -1,0 +1,31 @@
+{
+  "name": "tree-stack",
+  "version": "1.0.0",
+  "description": "A NodeJS/VueJS Tree species manager :)",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julon/tree-stack.git"
+  },
+  "keywords": [
+    "forest",
+    "tree"
+  ],
+  "author": "Julon Lou <contact@julonlou.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julon/tree-stack/issues"
+  },
+  "homepage": "https://github.com/julon/tree-stack#readme",
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.4"
+  }
+}
