@@ -1,10 +1,12 @@
 var express = require("express"),
   app = express(),
   port = process.env.PORT || 3000,
+  bodyParser = require("body-parser"),
+  cors = require('cors'),
   mongoose = require("mongoose"),
   Tree = require("./api/models/treeListModel"),
-  bodyParser = require("body-parser"),
-  api = require("./api/routes/treeListRoutes");
+  Routes = require("./api/routes");
+  
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -14,12 +16,20 @@ mongoose.connect("mongodb://localhost/tree-stack");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// add process.env.NODE_ENV === 'development'
+// add CORS support for development
+var corsOptions = {
+  origin: 'http://localhost:8080',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions))
+
 // serve REST api
-app.use("/api", api);
+app.use("/api", Routes);
 
 // serve frontend client
-app.use(express.static("public"));
+app.use(express.static("../client/dist"));
 
 // start listening
 app.listen(port);
-console.log("tree list RESTful API server started on: " + port);
+console.log("Tree-stack RESTful API server started on: " + port);

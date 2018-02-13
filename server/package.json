@@ -1,11 +1,11 @@
 {
   "name": "tree-stack",
   "version": "1.0.0",
-  "description": "A NodeJS/VueJS Tree species manager :)",
-  "main": "server.js",
+  "description": "A NodeJS Tree species server :)",
+  "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "nodemon": "^1.14.12"
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongoose": "^5.0.4"
   }
