@@ -24,7 +24,6 @@ mongoose.set("debug", true);
         if (err) throw err;
         console.log(`Number of tree inserted: ${res.insertedCount}`);
       });
-
   } catch (err) {
     console.error(e);
   } finally {

@@ -6,5 +6,5 @@ const http = axios.create({
   baseURL: `http://localhost:${port}/api`
 })
 export default {
-  get: () => http.get(`/tree`)
+  get: page => http.get(`/tree/${page}`)
 }

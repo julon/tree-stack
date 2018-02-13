@@ -1,6 +1,7 @@
 "use strict";
 
 var mongoose = require("mongoose"),
+  mongoosePaginate = require("mongoose-paginate"),
   Schema = mongoose.Schema;
 
 var TreeSchema = new Schema({
@@ -13,5 +14,7 @@ var TreeSchema = new Schema({
     default: Date.now()
   }
 });
+
+TreeSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model("Trees", TreeSchema);

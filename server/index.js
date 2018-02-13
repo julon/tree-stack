@@ -1,4 +1,4 @@
-var express = require("express"),
+const express = require("express"),
   app = express(),
   port = process.env.PORT || 3000,
   bodyParser = require("body-parser"),
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // add process.env.NODE_ENV === 'development'
 // add CORS support for development
-var corsOptions = {
+const corsOptions = {
   origin: 'http://localhost:8080',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }

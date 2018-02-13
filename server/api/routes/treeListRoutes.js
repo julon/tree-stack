@@ -1,7 +1,7 @@
 "use strict";
 
-var treeList = require("../controllers/treeListController");
+const treeList = require("../controllers/treeListController");
 
-module.exports = function(router) {
-  router.get("/tree", treeList.listAllTrees);
+module.exports = router => {
+  router.get("/tree/:page", treeList.listTreesByPage);
 };
