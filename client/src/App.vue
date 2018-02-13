@@ -1,14 +1,19 @@
 <template lang="pug">
-#app
-  h2 Tree-stack
-  tree-list(:trees="trees")
-  pagination(v-model="page" :max-page="max")
+v-app#app
+  v-toolbar.indigo(dark fixed app)
+    v-toolbar-title Tree-stack
+  v-content
+    v-list.tree-list
+      template(v-for="(tree, index) in trees")
+        v-list-tile
+          v-list-tile-content {{ tree.name }}
+        v-divider(v-if="index < trees.length - 1")
+  .py-2.px-3.mx-auto
+    v-pagination(:length="max" v-model="page" :total-visible="6")
 </template>
 
 <script>
-import TreeList from './TreeList'
-import TreeService from '../services/Tree'
-import Pagination from './Pagination'
+import TreeService from './Tree'
 
 export default {
   name: 'App',
@@ -35,10 +40,6 @@ export default {
     page () {
       this.getTrees()
     }
-  },
-  components: {
-    TreeList,
-    Pagination
   }
 }
 </script>

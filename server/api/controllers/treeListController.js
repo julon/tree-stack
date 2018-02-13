@@ -4,7 +4,7 @@ var mongoose = require("mongoose"),
   Tree = mongoose.model("Trees");
 
 function listTreesByPage(req, res) {
-  Tree.paginate({}, { page: req.params.page, limit: 3 }, (err, tree) => {
+  Tree.paginate({}, { page: req.params.page, limit: 15 }, (err, tree) => {
     if (err) res.send(err);
     res.json(tree);
   });
